@@ -1,12 +1,12 @@
 #Rubik's Cube Modeling NNN
-#Creat two type of matrixs for each Face. 
-#One is called base matrix (F[i]) and another one is superposition matrix (FS[i])which takes the moves on 
+#Creat two type of matrixs for each Face.
+#One is called base matrix (F[i]) and another one is superposition matrix (FS[i])which takes the moves on
 #each rubiks cube faces and memorize it and pass it to the base matrix (F[i]).
 
-#Creat two type of matrixs for each Face. One is called base matrix (F[i]) and another one is superposition matrix (FS[i])which 
+#Creat two type of matrixs for each Face. One is called base matrix (F[i]) and another one is superposition matrix (FS[i])which
 #takes the moves on each rubiks cube faces and memorize it and pass it to the base matrix (F[i])
-N <- 10 # Rubik'c Cube Dimension
-NumOfFaces <- 6 #number of cube faces which is 6 for 3*3 rubik cube. For shapes with more faces (more than 6) this gigit should be opened and investigated! 
+N <- 3 # Rubik'c Cube Dimension
+NumOfFaces <- 6 #number of cube faces which is 6 for 3*3 rubik cube. For shapes with more faces (more than 6) this gigit should be opened and investigated!
 #This digit acts like a cofficent of a model in determinstic models. However, in fact it has lot of independant parameters in it.
 F1 <- matrix(1, N,N)
 FS1 <- matrix(1, N,N) # super position matrix
@@ -19,13 +19,13 @@ FS4 <- matrix(4, N,N) # super position matrix
 F5 <- matrix(5, N,N)
 FS5 <- matrix(5, N,N) # super position matrix
 F6 <- matrix(6, N,N)
-FS6 <- matrix(6, N,N) # super position matrix 
+FS6 <- matrix(6, N,N) # super position matrix
 
 
 
-rubik_Scrambling_Num <- 100
+rubik_Scrambling_Num <- 1
 for (i in 1:rubik_Scrambling_Num){
-  
+
   #Generate a random integer between 1 and 6 (NumOfFaces).
   #Chose the face randomly that the move gonna be commited on.
   Face_Direction <- round(runif(1,1,6))
@@ -343,6 +343,7 @@ image(t(F3),col=grey(seq(0, 1, length = 256)),xlab = "Column",ylab = "Row",main 
 image(t(F4),col=grey(seq(0, 1, length = 256)),xlab = "Column",ylab = "Row",main = "Face#4")
 image(t(F5),col=grey(seq(0, 1, length = 256)),xlab = "Column",ylab = "Row",main = "Face#5")
 image(t(F6),col=grey(seq(0, 1, length = 256)),xlab = "Column",ylab = "Rowr",main = "Face#6")
+
 
 
 
