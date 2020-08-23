@@ -2,6 +2,7 @@
   <img width="1100" src="Assets/Warehouse-LEAD-IMAGE.jpeg" >
 </p>
 
+[Above picture](https://www.viatech.com/en/2019/11/improving-warehouse-safety-with-edge-ai-technology/).
 
 
 
