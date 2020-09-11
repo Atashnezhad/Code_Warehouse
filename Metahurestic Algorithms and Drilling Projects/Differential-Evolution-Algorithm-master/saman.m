@@ -2,12 +2,12 @@
 clc
 clear
 
-NumOfVar=4;
+NumOfVar=6;
 Dim=NumOfVar+1;
-SwarmNum=100;
+SwarmNum=200;
 CR=0.85;
 F=0.95;
-iteration=1000;
+iteration=200;
 %%
 %Some parameters details
 % % Wc=0.000000001;hx=1;bx=1;SR=45;BR=45;Db=12.25;
@@ -22,15 +22,15 @@ inipoints=zeros(NumOfVar,SwarmNum);
 %%
 %Variables ranges
 %aa1
-VarL(1)=-10;VarU(1)=500;
+VarL(1)=-1000;VarU(1)=1000;
 %aa2
-VarL(2)=-10;VarU(2)=10;
+VarL(2)=-5;VarU(2)=10;
 %aa3
-VarL(3)=-10;VarU(3)=10;
+VarL(3)=-5;VarU(3)=10;
 %aa4
-VarL(4)=-10;VarU(4)=10;
+VarL(4)=-4;VarU(4)=10;
 %aa5
-VarL(5)=-10;VarU(5)=10;
+VarL(5)=-1000;VarU(5)=1000;
 %aa6
 VarL(6)=-10;VarU(6)=10;
 
@@ -82,7 +82,7 @@ fitness=size(1,SwarmNum);
 for i=1:SwarmNum
     
     
-    fitness(i)=sam2(aa1(1,i),aa2(1,i),aa3(1,i),aa4(1,i));%,aa5(1,i),aa6(1,i)
+    fitness(i)=sam2(aa1(1,i),aa2(1,i),aa3(1,i),aa4(1,i),aa5(1,i),aa6(1,i));%
     
 end
 
@@ -266,7 +266,7 @@ end
 for i=1:SwarmNum
     
     %TV(3,i)=tan(sin(TV(1,i))*cos(TV(2,i)));
-    TV(7,i)=sam2(TV(1,i),TV(2,i),TV(3,i),TV(4,i));%,TV(5,i),TV(6,i)
+    TV(7,i)=sam2(TV(1,i),TV(2,i),TV(3,i),TV(4,i),TV(5,i),TV(6,i));%
 end
 %%
 %replace if TV is better than inipoints
@@ -283,27 +283,27 @@ end
 subplot(2,4,1);
 plot(inipoints(1,:))
 xlabel ('Swarm Num')
-ylabel ('a1')
+ylabel ('parameter_1')
 subplot(2,4,2);
 plot(inipoints(2,:))
 xlabel ('Swarm Num')
-ylabel ('a2')
+ylabel ('parameter_2')
 subplot(2,4,3);
 plot(inipoints(3,:))
 xlabel ('Swarm Num')
-ylabel ('a3')
+ylabel ('parameter_3')
 subplot(2,4,4);
 plot(inipoints(4,:))
 xlabel ('Swarm Num')
-ylabel ('a4')
+ylabel ('parameter_4')
 subplot(2,4,5);
 plot(inipoints(5,:))
 xlabel ('Swarm Num')
-ylabel ('a5')
+ylabel ('parameter_5')
 subplot(2,4,6);
 plot(inipoints(6,:))
 xlabel ('Swarm Num')
-ylabel ('a6')
+ylabel ('parameter_6')
 
 
 
