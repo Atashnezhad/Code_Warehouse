@@ -24,10 +24,10 @@ w=0.9;%-0.67;
 x = 16;
 %disp('Number of swarms');
 %ns = input('input number of swarms=');
-ns=50;
+ns=30;
 %disp('Number of iterations');
 %iterations=input('input nimber of iterations=');
-iterations=250;
+iterations=150;
 %ProgressBar1.Min = 1;
 %ProgressBar1.Max = iterations;
 n = 0;
@@ -217,12 +217,14 @@ end
 D(ite)=GV;
 %disp(ite)
 figure (1)
-subplot(2,1,1)
-plot(1:ite,D(1:ite),'r')%,'--'
+subplot(2,2,1)
+plot(1:ite,D(1:ite),'b')%,'--'
+xlabel('Iterations')
+ylabel('Candidates Fitness, MSE')
 grid on
 hold on
 
-subplot(2,1,2)
+subplot(2,2,2)
 pause (0.000001);
 %subplot(2,2,1)
 
@@ -230,7 +232,7 @@ for u=1:s
     %Xlim([9000 13000])
     %YLim([9000 13000])
     plot(mat(11,  u),mat(12,  u),'*');%,mat(13,  u),
-    
+    title('Candidates Convergence')
     
     hold on
     grid on
@@ -247,11 +249,13 @@ end
 %plot(1:ite,((cu(i)-G(i,1))/(cu(i)-cl(i))));
 %%%%plot(1:ite,mat(10+1,3+best):mat(10+i,3+best))
 
-%666666666666666666666666666666666666666
-figure(2)
+%666666666666666666666666666666666666666%$figure(2)
+subplot(2,2,3)
 %subplot(4,4,1)
 for i=1:16
 plot(1:ite,((cu(i)-F(i,1:ite))/(cu(i)-cl(i))),'r');
+xlabel('Iterations')
+ylabel('Candidates Evolution, Normalized')
 end
 hold on
 
